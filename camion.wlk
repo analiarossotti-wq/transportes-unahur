@@ -37,3 +37,4 @@ object camion {
         return not self.estaExcedido() and 
         not self.hayCosaConPeligrosidad(unNivel)
     }
+}
