@@ -4,7 +4,7 @@
  Si está vacío, su peligrosidad es 0.
 
 */
-object contenedor {
+object contenedores {
     const cosasAdentro = []
     method agregarCosa(cosa) {
         cosasAdentro.add(cosa)
