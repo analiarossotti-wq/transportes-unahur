@@ -1,8 +1,13 @@
 import camion.*
+import cosas.*
 
-describe "group of test for camion" {
+describe "test del camion" {
 
-  test "first test" {
+  test "el camion puede cargar cosas" {
+      const miCamion = camion
+      miCamion.cargarUnaCosa(knightRider)
+      miCamion.cargarUnaCosa(bumblebeebee)
+      assert.equals(2300,miCamion.peso())
     assert.that(true)
   }
 

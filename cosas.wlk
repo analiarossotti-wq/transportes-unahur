@@ -11,14 +11,14 @@ object contenedores {
         
     }
     method peso() {
-        return 100 + cosasAdentro.sum({cosa => cosa.peso()})
+        return 100 + cosasAdentro.sum({cosa => cosa.peso()}) 
         
     }
     method peligrosidad(){
         if(cosasAdentro.isEmpty()) {
             return 0
         } else {
-            return cosasAdentro.max({cosa => cosa.peligrosidad()})
+            return cosasAdentro.map({cosa => cosa.peligrosidad()}).max()
         }
     }
 }
@@ -29,7 +29,7 @@ object contenedores {
 object embalajeDeSeguridad {
     var cosaQueEnvuelve = residuosRadioactivos
     method peso() = cosaQueEnvuelve.peso()
-    method nivelDePeligrosidad() = (cosaQueEnvuelve.nivelDePeligrosidad() / 2) + cosaQueEnvuelve.peso()
+    method peligrosidad() = ((cosaQueEnvuelve.peligrosidad() / 2) + cosaQueEnvuelve.peligrosidad()).round()
     method cambiarCosaQueEnvuelve(unaCosa){
         cosaQueEnvuelve = unaCosa
     } 
@@ -39,7 +39,7 @@ object embalajeDeSeguridad {
 object residuosRadioactivos {
     var pesoActual = 50
     method peso() = pesoActual
-    method nivelDePeligrosidad() = 200
+    method peligrosidad() = 200
     method cambiarPeso(unPeso){
         pesoActual = unPeso
     }

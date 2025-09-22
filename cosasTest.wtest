@@ -1,9 +1,56 @@
 import cosas.*
+import camion.*
 
-describe "group of test for cosas" {
+describe "test de cosas" {
 
-  test "first test" {
-    assert.that(true)
+  test "peso de embalajeDeSeguridad con bumblebee" {
+      embalajeDeSeguridad.cambiarCosaQueEnvuelve(bumblebeebee)
+      assert.equals(800, embalajeDeSeguridad.peso())
   }
 
+  test "peligrosidad de embalajeDeSeguridad con bumblebee" {
+      embalajeDeSeguridad.cambiarCosaQueEnvuelve(bumblebeebee)
+      assert.equals(23,embalajeDeSeguridad.peligrosidad())
+  }
+  test "peso de embalajeDeSeguridad con residuosRadioactivos" {
+      embalajeDeSeguridad.cambiarCosaQueEnvuelve(residuosRadioactivos)
+      assert.equals(50,embalajeDeSeguridad.peso())
+  }
+  test "peligrosidad de embalajeDeSeguridad con residuosRadioactivos" {
+      embalajeDeSeguridad.cambiarCosaQueEnvuelve(residuosRadioactivos)
+      assert.equals(150,embalajeDeSeguridad.nivelDePeligrosidad())
+  }
+  test "peso de residuosRadioactivos" {
+      assert.equals(50,residuosRadioactivos.peso())
+  }
+  test "peligrosidad de residuosRadioactivos" {
+      assert.equals(200,residuosRadioactivos.peligrosidad())
+  }
+  test "peso de knightRider" {
+      assert.equals(500,knightRider.peso())
+  }
+  test "peligrosidad de knightRider" {
+      assert.equals(10,knightRider.peligrosidad())
+  }
+  test "peso de bumblebeebee" {
+      assert.equals(800,bumblebeebee.peso())
+  }
+  test "peligrosidad de bumblebeebee en modo auto" {
+      assert.equals(15,bumblebeebee.peligrosidad())
+  }
+  test "peligrosidad de bumblebeebee en modo robot" {
+      bumblebeebee.cambiarTransformacion(robot)
+      assert.equals(30,bumblebeebee.peligrosidad())
+  }
+  test "peso de paqueteDeLadrillos con 10 ladrillos" {
+      assert.equals(20,paqueteDeLadrillos.peso())
+  }
+  test "peligrosidad de paqueteDeLadrillos con 10 ladrillos" {
+      assert.equals(2,paqueteDeLadrillos.peligrosidad())
+  }
+  test "peso de paqueteDeLadrillos con 25 ladrillos" {
+      paqueteDeLadrillos.setLadrillos(25)
+      assert.equals(50,paqueteDeLadrillos.peso())
+
+  }
 }
