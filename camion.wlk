@@ -27,5 +27,13 @@ object camion {
         cosasQueSuperenPeligrosidad.addAll(
             self.obtenerCosaConNivelDePeligrosidad(unNivel)) 
     }
-    
-}
+    method estaExcedido() {
+        return self.peso() > 2500
+    }
+    method hayCosaConPeligrosidad(unNivel) {
+        return cosas.any({c => c.peligrosidad() == unNivel})
+    }
+    method puedeCircularEnRuta(unNivel) {
+        return not self.estaExcedido() and 
+        not self.hayCosaConPeligrosidad(unNivel)
+    }
