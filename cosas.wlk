@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*un contenedor puede tener otras cosas adentro.
  El peso es 100 + la suma de todas las cosas que estén adentro.
  Es tan peligroso como el objeto más peligroso que contiene.
@@ -23,7 +22,28 @@ object contenedores {
         }
     }
 }
-=======
+/*Embalaje de seguridad: es una cobertura que envuelve a cualquier otra cosa.
+ El peso es el peso de la cosa que tenga adentro. El nivel de peligrosidad es
+  la mitad del nivel de peligrosidad de lo que envuelve.
+*/
+object embalajeDeSeguridad {
+    var cosaQueEnvuelve = residuosRadioactivos
+    method peso() = cosaQueEnvuelve.peso()
+    method nivelDePeligrosidad() = (cosaQueEnvuelve.nivelDePeligrosidad() / 2) + cosaQueEnvuelve.peso()
+    method cambiarCosaQueEnvuelve(unaCosa){
+        cosaQueEnvuelve = unaCosa
+    } 
+}
+
+/*Residuos radioactivos: el peso es variable y su peligrosidad es 200.*/
+object residuosRadioactivos {
+    var pesoActual = 50
+    method peso() = pesoActual
+    method nivelDePeligrosidad() = 200
+    method cambiarPeso(unPeso){
+        pesoActual = unPeso
+    }
+}
 object knightRider {
     method peso() = 500
     method peligrosidad() = 10
@@ -68,4 +88,3 @@ object arenaAGranel {
 
     method peligrosidad() = 1
 }
->>>>>>> 12f452c47d46a2898355a97663f8cc85dea9931c

@@ -1,7 +1,7 @@
 object camion {
     const cosas = []
     var pesoCamion = 1000
-    var cosasQueSuperenPeligrosidad = []
+    const cosasQueSuperenPeligrosidad = []
     method peso() {return pesoCamion} 
     method cargarUnaCosa(unaCosa) {
          cosas.add(unaCosa)
