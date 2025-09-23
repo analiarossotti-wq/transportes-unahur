@@ -18,7 +18,7 @@ describe "test de cosas" {
   }
   test "peligrosidad de embalajeDeSeguridad con residuosRadioactivos" {
       embalajeDeSeguridad.cambiarCosaQueEnvuelve(residuosRadioactivos)
-      assert.equals(150,embalajeDeSeguridad.nivelDePeligrosidad())
+      assert.equals(150,embalajeDeSeguridad.peligrosidad())
   }
   test "peso de residuosRadioactivos" {
       assert.equals(50,residuosRadioactivos.peso())
