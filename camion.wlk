@@ -15,15 +15,15 @@ object camion {
         cosas.size().mod(2) == 0
     }
     method hayCosaConPeso(unPeso){
-        return cosas.any({c => c.peso() == unPeso})
+        return cosas.any({c => c.peso() == unPeso}) //obtiene una cosa con el peso indicado
     }
-    method obtenerCosaConNivelDePeligrosidad(unNivel) {
+    method obtenerCosaConNivelDePeligrosidad(unNivel) { // obtiene una cosa con el nivel de peligrosidad indicado
         return cosas.find({c => c.peligrosidad() == unNivel})
     }
-    method obtenerTodasConPeligrosidad(unNivel){
+    method obtenerTodasConPeligrosidad(unNivel){ // obtiene todas las cosas con peligrosidad mayor al nivel indicado
         return cosas.filter({c=> c.peligrosidad() > unNivel})
     }
-    method devolverListaDeCosasConPeligrosidadSuperada(unNivel){
+    method devolverListaDeCosasConPeligrosidadSuperada(unNivel){ 
         cosasQueSuperenPeligrosidad.addAll(
             self.obtenerCosaConNivelDePeligrosidad(unNivel)) 
     }
